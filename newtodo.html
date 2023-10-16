@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Todo</title>
+    <link rel="stylesheet" href="newtodo.css" />
+</head>
+<body>
+
+    <div class="overlay-container">
+        <div class="overlay-content">
+            <div>
+            <h2>Write your TO DO 😇 </h2>
+            <input type="text" id="todo-text" placeholder="Type To Do"/>
+            <button id="create" class="add-btn" style="margin-top: 1em;">Create TO DO</button>
+        </div>
+        </div>
+    </div>
+    <main>
+        <div class="main-container">
+
+            <div class="title-todo">
+                <h2>To Do</h2>
+            </div>
+            <div class="task-container">
+                <div class="top-content">
+                    <h2>Task List</h2>
+                    <div class="counter">
+                        <h4 id="count"><span id="done">0</span>/ <span id="length">5</span>done</h4>
+                    </div>
+                </div>
+                <div class="todo">
+                    <div class="text-container">
+                        <label  class="label">
+                        <input type="checkbox" id="doneTask">
+                        this is the new text
+                        </label>
+                    </div>
+                </div>
+                <div class="add-task-btn" style="margin-top: 1em;">
+                    <button class="add-btn" id="addBtn">+ Add Task</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="newtodo.js"></script>
+</body>
+</html>
