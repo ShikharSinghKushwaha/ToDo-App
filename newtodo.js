@@ -28,38 +28,86 @@ function countLength(){
     length.innerHTML = taskContainer.children.length;
 }
 
-//alert(taskContainer.children.length)
 countLength();
+
+function validateText(){
+    if(todoText.value === ""){
+        document.querySelector("#error").style.display = 'block';
+        return false
+        }else{
+        document.querySelector("#error").style.display = 'none';
+        return true;
+    }
+}
+
+
 let countDone = 0;
 
-function addTask(){
+
+function addTask(e){
+   
+
+      e.preventDefault();
+
+
+     if(validateText()) {
+
+    
+   
     const createDiv = document.createElement("div");
+    const deleteBtn = document.createElement("span");
+    deleteBtn.classList.add("material-symbols-outlined");
+    deleteBtn.textContent = 'delete';
+    deleteBtn.classList.add("delete-icon")
     createDiv.classList.add("text-container");
     
     createDiv.innerHTML = `
     <label  class="label">
     <input type="checkbox" id="doneTask">
-    ${todoText.value}
+    ${getValues}
     </label>
     ` ;
-let checkbox = document.getElementById("doneTask")
-     
-    createDiv.addEventListener("click",function() {
-      if(checkbox.checked === true){
-          createDiv.classList.add("checked")
-      }else{
-        createDiv.classList.remove("checked")
 
-        
+    
+
+    
+    createDiv.append(deleteBtn)
+
+let checkbox = createDiv.querySelector("#doneTask")
+
+    checkbox.addEventListener("click",checking )
+    function checking(){
+      if(checkbox.checked === true){
+          checkbox.classList.add("checked")
+          countDone++;
+          
+          deleteBtn.style.visibility = 'visible';
+      }else{
+         countDone--;
+         deleteBtn.style.visibility = 'hidden';
+
+         checkbox.classList.remove("checked")
+
       }
-        // this.classList.add("checked");
         
+
         done.innerHTML = countDone;
-    })
+    }
+
+      deleteBtn.addEventListener("click",function() {
+         createDiv.remove();
+         countLength();
+         countDone--;
+         done.innerHTML = countDone;
+
+     })
+
     taskContainer.append(createDiv);
 
     todoText.value = '';
     overlayContainer.style.display = 'none';
 
     countLength();
+}
+
 }

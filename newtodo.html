@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Todo</title>
     <link rel="stylesheet" href="newtodo.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 
@@ -12,8 +13,11 @@
         <div class="overlay-content">
             <div>
             <h2>Write your TO DO 😇 </h2>
-            <input type="text" id="todo-text" placeholder="Type To Do"/>
-            <button id="create" class="add-btn" style="margin-top: 1em;">Create TO DO</button>
+            <form >
+            <input type="text" id="todo-text" placeholder="Type To Do" autocomplete="off" required/>
+            <h3 style="color: red;" id="error">Please Write Something..</h3>
+            <input type="submit" id="create" class="add-btn" style="margin-top: 1.5em;" value="Create TO DO" />
+        </form>
         </div>
         </div>
     </div>
@@ -24,19 +28,15 @@
                 <h2>To Do</h2>
             </div>
             <div class="task-container">
+
                 <div class="top-content">
                     <h2>Task List</h2>
                     <div class="counter">
-                        <h4 id="count"><span id="done">0</span>/ <span id="length">5</span>done</h4>
+                        <h4 id="count"><span id="done">0</span> / <span id="length">5</span>done</h4>
                     </div>
                 </div>
                 <div class="todo">
-                    <div class="text-container">
-                        <label  class="label">
-                        <input type="checkbox" id="doneTask">
-                        this is the new text
-                        </label>
-                    </div>
+                   
                 </div>
                 <div class="add-task-btn" style="margin-top: 1em;">
                     <button class="add-btn" id="addBtn">+ Add Task</button>

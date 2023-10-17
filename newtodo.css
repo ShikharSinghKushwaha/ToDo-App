@@ -41,14 +41,18 @@ main{
     align-items: center;
     justify-content: center;
     font-size:1.3em;
-    /* color: white; */
-    background: linear-gradient(rgba(0,0,3,.3),rgba(10,30,10,.4));
+    background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #363795, #005C97); 
+    color: wheat;
 }
 
 .task-container{
     margin-top: 1em;
-    border: 1px solid black;
-    height: 300px;
+    
+    height: 300px auto;
+    
+    width: 100%;
 }
 
 .top-content{
@@ -65,12 +69,12 @@ main{
     font-size: 1.3em;
     font-family: 'Heebo', sans-serif ;
     cursor: pointer;
-    background-color: lightblue;
+    background-color: rgb(52, 195, 243);
     outline: none;
     border: none;
     font-weight: bold;
-
-    border-radius: 10px;
+    
+    border-radius: 152px;
 }
 .add-task-btn{
     display: flex;
@@ -84,7 +88,8 @@ main{
     grid-gap: .4em;
 }
 .text-container{
-   width: 90% auto;
+   width: 95% ;
+   word-break: break-all;
    /* background: rgb(49, 208, 236); */
    color:white;
    border: 1px solid gray;
@@ -96,8 +101,8 @@ main{
 }
 
 .text-container input{
-    width:20px;
-    height: 20px;
+    width:25px;
+    height: 25px;
 }
 .label{
     padding: 4px 15px;
@@ -111,13 +116,13 @@ main{
     position: relative;
 }
 
-.checked::before{
-        
-    width: 300px;
-    top: 20px;
-    left: 0;
-    
-    height: 30px;
+.checked::after{
+    content: '';
+    left:0;
+    position: absolute;
+    width: 350px; 
+    top: 18px;
+    height: 2px;
     background-color: gray;
     
 }
@@ -154,11 +159,46 @@ main{
     margin-top: 1em;
     outline: none;
     border-radius: 8px;
-    font-weight: 550;
+    font-family: 'heebo';
     border: 2px solid black;
 }
 
 #todo-text:focus{
     border-color: blue;
     box-shadow: 0px 0px 3px 3px lightblue;
+}
+
+#error{
+    position: absolute;
+    left: 20px;
+    display: none;
+}
+
+.delete-icon{
+    color:black;
+    cursor: pointer;
+    padding: 4px 5px;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+/* .text-container:hover .delete-icon{
+    visibility: visible;
+    
+} */
+.delete-icon:hover{
+    background-color: gray;
+}
+
+
+@media(max-width:900px){
+    .main-container{
+        width: 70%;
+    }
+}
+
+@media(max-width:400px){
+    .main-container{
+        width: 85%;
+    }
 }
