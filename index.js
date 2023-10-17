@@ -64,7 +64,7 @@ function addTask(e){
     createDiv.innerHTML = `
     <label  class="label">
     <input type="checkbox" id="doneTask">
-    ${getValues}
+    ${todoText.value}
     </label>
     ` ;
 
