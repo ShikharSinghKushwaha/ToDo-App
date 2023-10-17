@@ -71,7 +71,7 @@ function addTask(e){
     
 
     
-    createDiv.append(deleteBtn)
+    createDiv.append(deleteBtn);
 
 let checkbox = createDiv.querySelector("#doneTask")
 
