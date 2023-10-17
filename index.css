@@ -197,8 +197,22 @@ main{
     }
 }
 
-@media(max-width:400px){
+@media(max-width:470px){
     .main-container{
         width: 85%;
+    }
+    .checked::after{
+        content: '';
+        left:0;
+        position: absolute;
+        width: 265px; 
+        top: 18px;
+        height: 2px;
+        background-color: gray;
+        
+    
+    }
+    .overlay-content{
+        width: 330px;
     }
 }
